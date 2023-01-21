@@ -1,0 +1,20 @@
+[
+  {
+    "imagem": "http: //imagem.com",
+    "descricao": "Tenis Nike Legalzao",
+    "preco": 10,
+    "categoria": "tenis",
+    "titulo": "Tenis NIke",
+    "precoDesconto": 5,
+    "desconto": 50
+  },
+  {
+    "imagem": "http: //imagem2.com",
+    "descricao": "Tenis Adidas Legalzao",
+    "preco": 20,
+    "categoria": "tenis",
+    "titulo": "Tenis Addidas",
+    "precoDesconto": 10,
+    "desconto": 50
+  }
+]

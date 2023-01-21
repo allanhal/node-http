@@ -2,17 +2,27 @@ const http = require("http");
 const host = 'localhost';
 const port = 3333;
 
+const produtos = require('./produtos.json')
+
+function tratamentoProdutos(req, res){
+    if(req.method === 'GET'){
+        res.end(JSON.stringify(produtos))
+    }else{
+        res.end('sem suporte')
+    }
+}
+
 const requestListener = function (req, res) {
-    // if (req.url == "/allan") {
-    //     res.end("<h1>Allan</h1>")
-    // } else if (req.url == "/") {
-    //     res.end("<h1>Estou vivo</h1>")
-    // } else if (req.url.indexOf('/v1/') === 0) {
-    //     res.end(req.url.substring(4))
-    // } else {
-    //     res.end("<h1>Desconhecido</h1>")
-    // }    
-    res.end(req.method)
+    console.log('req.url', req.url)
+    console.log('req.method', req.method)
+
+    if(req.url === '/'){
+        res.end('oi')
+    } else if(req.url === '/produtos'){
+        tratamentoProdutos(req, res)
+    } else{
+        res.end('desconhecido')
+    }
 };
 const server = http.createServer(requestListener);
 server.listen(port, host);
